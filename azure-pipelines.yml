@@ -1,4 +1,3 @@
-
 pool:
   vmImage: 'windows-latest'
 
@@ -25,3 +24,7 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.war'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
