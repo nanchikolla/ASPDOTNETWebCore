@@ -28,3 +28,8 @@ steps:
   inputs:
     Contents: '**/*.war'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop war files into artifact directory'
+    publishLocation: 'Container'
